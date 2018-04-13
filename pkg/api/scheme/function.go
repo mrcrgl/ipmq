@@ -5,8 +5,8 @@ import (
 
 	"github.com/mrcrgl/ipmq/pkg/api"
 	"github.com/mrcrgl/ipmq/pkg/api/machinery"
-	"github.com/travisjeffery/jocko"
-	"github.com/travisjeffery/jocko/protocol"
+
+	"github.com/mrcrgl/ipmq/pkg/protocol"
 )
 
 var (
@@ -24,7 +24,7 @@ type APIFunction struct {
 	handler machinery.Handler
 }
 
-func (af APIFunction) Handle(kv protocol.APIKeyVersion, decoder *protocol.ByteDecoder, broker jocko.Broker) (protocol.ByteEncoder, error) {
+func (af APIFunction) Handle(kv protocol.APIKeyVersion, decoder *protocol.ByteDecoder, broker interface{}) (protocol.ByteEncoder, error) {
 	if af.handler == nil {
 		return nil, ErrHandlerNotSetUp
 	}

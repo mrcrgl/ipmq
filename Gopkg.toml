@@ -1,0 +1,15 @@
+[[constraint]]
+  branch = "master"
+  name = "github.com/edsrzf/mmap-go"
+
+[[constraint]]
+  name = "github.com/hashicorp/raft"
+  version = "1.0.0"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/hashicorp/raft-mdb"
+
+[prune]
+  go-tests = true
+  unused-packages = true
